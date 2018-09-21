@@ -6,6 +6,15 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+
+    fontawesome:{
+      icons:{
+        'free-solid-svg-icons':[
+          'search'
+        ]
+      }
+    },
+    
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

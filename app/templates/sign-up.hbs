@@ -1,0 +1,23 @@
+
+<div class="container sign-up">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 well well-sm">
+            <h4> Welcome: Sign up! </h4>
+            <form onsubmit={{action "createNewUser"}} class="form" role="form">
+            <div class="row">
+                <div class="col-xs-6 col-md-6">
+                    {{input type="text" class="form-control" value=fname placeholder="First Name"}}
+                </div>
+                <div class="col-xs-6 col-md-6">
+                    {{input type="text" class="form-control" value=lname placeholder="Last Name"}}
+                </div>
+            </div>
+            {{input type="email" class="form-control" value=email placeholder="Email"}}
+            {{input type="password" class="form-control" value=password placeholder="Password"}}
+            <br />
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                Sign up</button>
+            </form>
+        </div>
+    </div>
+</div>
