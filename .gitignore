@@ -22,3 +22,14 @@
 /.node_modules.ember-try/
 /bower.json.ember-try
 /package.json.ember-try
+
+ember-cordova/tmp-livereload
+ember-cordova/cordova/node_modules
+ember-cordova/cordova/package.json
+ember-cordova/cordova/package-lock.json
+ember-cordova/cordova/platforms/*
+!ember-cordova/cordova/platforms/.gitkeep
+ember-cordova/cordova/plugins/*
+!ember-cordova/cordova/plugins/.gitkeep
+ember-cordova/cordova/www/*
+!ember-cordova/cordova/www/.gitkeep

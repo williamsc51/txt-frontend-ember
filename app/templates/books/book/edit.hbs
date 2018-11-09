@@ -1,44 +1,44 @@
 <div class="container-fluid">
 
-		<h2>Add a book...get paid</h2>
+		<h2>Edit your book...and still get paid</h2>
 
-    <form onsubmit={{action "createNewBook"}}>
+    <form onsubmit="">
         <div class="row">
                 <div class="col-md-12">
                     <div class="form-group form-group-sm">
                         <label class="control-label">Title</label>
-                        {{input type="text" class="form-control" value=title placeholder="Title"}}
+                        {{input type="text" class="form-control" value=model.title placeholder="Title"}}
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                       <label class="control-label">Author</label>
-                      {{input type="text" class="form-control" value=author placeholder="Author"}}
+                      {{input type="text" class="form-control" value=model.author placeholder="Author"}}
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                       <label class="control-label">ISBN</label>
-                      {{input type="text" class="form-control" value=isbn placeholder="ISBN"}}
+                      {{input type="text" class="form-control" value=model.isbn placeholder="ISBN"}}
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                       <label class="control-label">Price</label>
-                      {{input type="text" class="form-control" value=price placeholder="Price"}}
+                      {{input type="text" class="form-control" value=model.price placeholder="Price"}}
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                       <label class="control-label">Description</label>
-                      {{textarea class="form-control" value=description}}
+                      {{textarea class="form-control" value=model.description}}
                     </div>
                 </div>
 								<div class="col-md-12">
 										<div class="form-group">
 											<label class="control-label">Condition</label>
-											<select onchange={{action "setCondition" value="target.value"}}>
-												 <option disabled selected> -- Condition -- </option>
+											<select onchange="">
+												 <option disabled selected> {{model.condition}} </option>
 												    <option value="excellent">Excellent</option>
 												    <option value="good">Good</option>
 														<option value="average">Average</option>
@@ -46,26 +46,17 @@
 											</select>
 										</div>
 								</div>
-
-								<div class="col-md-12">
-										<div class="form-group">
-											{{#file-upload name="photos" accept="image/*" onfileadd=(action "uploadImage") as |queue|}}
-											  <a class="button">
-											    {{#if queue.files.length}}
-											      Uploading...
-											    {{else}}
-											      Upload file
-											    {{/if}}
-											  </a>
-											{{/file-upload}}
-										</div>
-								</div>
-
+                <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="control-label">Cover</label>
+                      {{input type="text" class="form-control" id='cover' value=model.cover placeholder="Cover"}}
+                    </div>
+                </div>
 								<div class="col-md-12">
 										<div class="form-group">
 											<label class="control-label">Category</label>
-											<select onchange={{action "setCategory" value="target.value"}}>
-												 <option disabled selected> -- Category -- </option>
+											<select onchange="">
+												 <option disabled selected> {{model.category}} </option>
 												    <option value="novel">Novel</option>
 												    <option value="college">College Level</option>
 														<option value="highSchool">High School Level</option>
@@ -75,8 +66,9 @@
 								</div>
         </div>
 
+
              <div class="col-xs-12">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </div>
 
     </form>

@@ -9,12 +9,10 @@ module.exports = function(environment) {
 
     fontawesome:{
       icons:{
-        'free-solid-svg-icons':[
-          'search'
-        ]
+        'free-solid-svg-icons': 'all'
       }
     },
-    
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

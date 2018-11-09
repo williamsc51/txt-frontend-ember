@@ -1,38 +1,67 @@
-  <div class="input-group col-md-4">
-        <input class="form-control py-2" type="search" value="search" id="example-search-input">
-        <span class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button">
-              <i class="fa fa-search"></i>
-          </button>
-        </span>
+  <div class="container-fluid">
+    <div class="input-group">
+          <input class="form-control py-2" type="search" value="search" id="example-search-input">
+          <span class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">
+                <i class="fa fa-search"></i>
+            </button>
+          </span>
+    </div>
   </div>
 
 
-<div id="main">
+  <header class="banner d-flex justify-content-center align-items-center">
+      <div>
+        <img src="/logo/txttide.png" width="200px" height="200px" alt="">
+      </div>
+  </header>
 
-  <section>
+<div class="container-fluid">
+  
+  <h2>Best Deals</h2>
+  <section class="row">
+    
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <div>
+          {{fa-icon 'book' size=4}}
+          <p>Books</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <div>
+          {{fa-icon 'check-circle' size=4}}
+          <p>Deals</p>
+        </div>
+      </div>
 
-     <h4>College/University</h4>
-
-       <div class="column">
-         <img src="../../image/book1.jpg" alt="Book1" class="img-thumbnail">
-         <caption>{{book.title}}</caption>
-         <img src="../../image/book1.jpg" alt="Book1" class="img-thumbnail">
-         <caption>{{book.title}}</caption>
-       </div>
-
-       <div class="column">
-         <img src="../../image/book1.jpg" alt="Book1" class="img-thumbnail">
-         <caption>{{book.title}}</caption>
-         <img src="../../image/book1.jpg" alt="Book1" class="img-thumbnail">
-         <caption>{{book.title}}</caption>
-       </div>
-     
-     <div class="clear"></div>
-     <hr>
-    <p> see more</p>
-
+    <div class="col-6 col-md-3 d-flex justify-content-center">
+      <div>
+        {{fa-icon 'user' size=4}}
+        <p>Join Us</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-3 d-flex justify-content-center">
+      <div>
+        {{fa-icon 'check-circle' size=4}}
+        <p>Deals</p>
+      </div>
+    </div>
   </section>
+
+  <div class="row">
+      <div class="">footer</div>
+
+  </div>
+
+    <!-- {{#each model as |book|}}
+      <div class="">
+        {{book.cover}}
+        {{book.title}}
+        {{book.author}}
+        {{book.isbn}}
+        {{#link-to 'books.book.show' book}}Show book{{/link-to}}
+      </div>
+    {{/each}} -->
 
 
 </div>

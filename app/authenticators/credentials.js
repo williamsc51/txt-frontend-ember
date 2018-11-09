@@ -18,7 +18,7 @@ export default Base.extend({
         password
       })
     })
-    let { email: userEmail, authentication_token } = response;
-    return { userEmail, authentication_token };
+    let { id, email, authentication_token } = response;
+    return { id, email, authentication_token };
   }
 });

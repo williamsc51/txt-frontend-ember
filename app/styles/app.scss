@@ -178,3 +178,21 @@ body {
     color: rgb(12, 97, 33);
 }
 /* Login  Form CSS End*/
+
+.banner{
+  background: url('/logo/banner-bg.png') no-repeat center center;
+  background-size: cover;
+  height: 40vh;
+}
+.banner img{
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
+.square{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-end;
+}
