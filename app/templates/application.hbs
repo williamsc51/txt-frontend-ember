@@ -1,26 +1,40 @@
+    <div class="container-fluid bg-dark">
+      {{#bs-navbar type='dark' backgroundColor='dark' toggleBreakpoint='md'  as |navbar|}}
 
-{{#bs-navbar as |navbar|}}
+          {{navbar.toggle}}
 
-  {{navbar.toggle}}
+          <div class="navbar-brand">
+            <img src="/logo/logo_head.png" atl="Logo" class="logo" />
+          </div>
+          
+          <div class="order-md-3">
+            {{#if session.isAuthenticated}}
+                <button type="button" {{action "logOut"}}>Logout</button>
+            {{else}}
+                {{link-to 'Sign In' 'login'}}
+            {{/if}}
+          </div>
 
-    <img src="/logo/logo_head.png" atl="Logo" class="logo" />
+            {{#navbar.content}}
+              {{#navbar.nav as |nav|}}
+                {{#nav.item}}{{#nav.link-to "index"}} Home {{/nav.link-to}}{{/nav.item}}
+                {{#nav.item}}{{#nav.link-to "users.profile"}} My Account {{/nav.link-to}}{{/nav.item}}
+                {{#nav.item}}{{#nav.link-to "books"}} Deals {{/nav.link-to}}{{/nav.item}}
+                {{#nav.item}}{{#nav.link-to "sign-up"}} Register {{/nav.link-to}}{{/nav.item}}
+              {{/navbar.nav}}
+            {{/navbar.content}}
 
-    {{#if session.isAuthenticated}}
-        <button type="button" {{action "logOut"}}>Logout</button>
-    {{else}}
-        {{link-to 'Sign In' 'login'}}
-    {{/if}}
+      {{/bs-navbar}}
+      </div>
 
-      {{#navbar.content}}
-        {{#navbar.nav as |nav|}}
-          {{#nav.item}}{{#nav.link-to "index"}} Home {{/nav.link-to}}{{/nav.item}}
-          {{#nav.item}}{{#nav.link-to "users.profile"}} My Account {{/nav.link-to}}{{/nav.item}}
-          {{#nav.item}}{{#nav.link-to "books"}} Deals {{/nav.link-to}}{{/nav.item}}
-          {{#nav.item}}{{#nav.link-to "sign-up"}} Register {{/nav.link-to}}{{/nav.item}}
-        {{/navbar.nav}}
-      {{/navbar.content}}
-
-{{/bs-navbar}}
-
+      <div class="input-group">
+        <input class="form-control py-2" type="search" placeholder="search" id="search-input">
+        <span class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button">
+              <i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+    
 
 {{outlet}}
