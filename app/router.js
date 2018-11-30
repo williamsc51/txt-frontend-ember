@@ -23,6 +23,8 @@ Router.map(function() {
   this.route('login');
 
   this.route('org', function() {});
+  this.route('add_test');
+  this.route('covers');
 });
 
 export default Router;

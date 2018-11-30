@@ -9,6 +9,5 @@ export default DS.Model.extend({
   price: DS.attr('number'),
   description: DS.attr('string') ,
   condition: DS.attr('string') ,
-  cover: DS.attr('file'),
   category: DS.attr('string')
 });
