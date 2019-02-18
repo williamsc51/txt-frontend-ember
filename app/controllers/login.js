@@ -14,7 +14,7 @@ export default Controller.extend({
 
       await this.get('session').authenticate('authenticator:credentials', email, password);
 
-      await this.transitionToRoute('index');
+      await this.transitionToRoute('users.profile');
     }
   }
 });

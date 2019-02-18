@@ -7,7 +7,8 @@ export default DS.Model.extend({
   author: DS.attr('string'),
   isbn: DS.attr('number'),
   price: DS.attr('number'),
-  description: DS.attr('string') ,
-  condition: DS.attr('string') ,
+  description: DS.attr('string'),
+  condition: DS.attr('string'),
+  thumbnail: DS.attr('string'),
   category: DS.attr('string')
 });

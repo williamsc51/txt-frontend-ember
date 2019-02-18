@@ -1,26 +1,56 @@
 
-{{#bs-navbar as |navbar|}}
+      {{#bs-navbar as |navbar|}}
 
-  {{navbar.toggle}}
+        
+        {{navbar.toggle}}
 
-    <img src="/logo/logo_head.png" atl="Logo" class="logo" />
+          <img src="/logo/logo_head.png" atl="Logo" class="logo" />
 
-    {{#if session.isAuthenticated}}
-        <button type="button" {{action "logOut"}}>Logout</button>
-    {{else}}
-        {{link-to 'Sign In' 'login'}}
-    {{/if}}
+          <div class="order-md-3">
+            {{#if session.isAuthenticated}}
+                <button type="button" {{action "logOut"}}>Logout</button>
+            {{else}}
+                {{link-to 'Sign In' 'login'}}
+            {{/if}}
+          </div>
 
-      {{#navbar.content}}
-        {{#navbar.nav as |nav|}}
-          {{#nav.item}}{{#nav.link-to "index"}} Home {{/nav.link-to}}{{/nav.item}}
-          {{#nav.item}}{{#nav.link-to "users.profile"}} My Account {{/nav.link-to}}{{/nav.item}}
-          {{#nav.item}}{{#nav.link-to "books"}} Deals {{/nav.link-to}}{{/nav.item}}
-          {{#nav.item}}{{#nav.link-to "sign-up"}} Register {{/nav.link-to}}{{/nav.item}}
-        {{/navbar.nav}}
-      {{/navbar.content}}
+            {{#navbar.content}}
+              {{#navbar.nav as |nav|}}
+                {{#nav.item}}{{#nav.link-to "index"}} Home {{/nav.link-to}}{{/nav.item}}
+              {{#if session.isAuthenticated}}  
+                {{#nav.item}}{{#nav.link-to "users.profile"}} My Account {{/nav.link-to}}{{/nav.item}}
+              {{/if}}
+                {{#nav.item}}{{#nav.link-to "books"}} Deals {{/nav.link-to}}{{/nav.item}}
+                {{#nav.item}}{{#nav.link-to "sign-up"}} Register {{/nav.link-to}}{{/nav.item}}
+              {{/navbar.nav}}
+            {{/navbar.content}}
 
-{{/bs-navbar}}
+      {{/bs-navbar}}
 
+  <div class="content flex-shink-0"> {{outlet}}</div>
 
-{{outlet}}
+  <footer class="footer mt-auto">
+    <div class="container-fluid">
+        <div class="row d-flex footer-links">
+            <div class="col-6">
+              <ul>
+                <li>txt.com</li>
+                <li>Contact Us</li>
+                <li>Sell Your Books</li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Your Orders</li>
+                <li>Your Account</li>
+                <li>Wish List</li>
+              </ul>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center footer-copyright">
+            <div class="col-12">Sign Out</div>
+            <div class="col-12">Copy right. All rights reserved</div>
+        </div>
+
+    </div>
+  </footer>

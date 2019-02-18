@@ -1,8 +1,25 @@
-<div class="">
-  {{model.title}}
-  {{model.author}}
-  {{model.isbn}}
-  {{model.price}}
+<div class="container-fluid">
 
-{{#link-to 'books.book.edit' model.id}}Edit{{/link-to}}
+<h4>{{model.title}}</h4>
+<h6>{{model.author}}</h6>
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <img src="/image/small-great-things.png" alt="">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <p>ISBN: {{model.isbn}}</p>
+    </div>
+
+    <div class="col-6">
+      <p>Price: {{model.price}}</p>
+    </div>
+    <div class="col">
+      Product Description
+      <p>{{model.description}}</p>
+    </div>
+  </div>
+
 </div>

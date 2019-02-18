@@ -9,6 +9,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('books', function() {
     this.route('new');
+    this.route('covers');
     this.route('book', { path: '/:id'}, function(){
       this.route('show');
       this.route('edit');
@@ -20,11 +21,7 @@ Router.map(function() {
 
   this.route('index', { path: '/'} );
   this.route('sign-up');
-  this.route('login');
-
-  this.route('org', function() {});
-  this.route('add_test');
-  this.route('covers');
+  this.route('login');  
 });
 
 export default Router;

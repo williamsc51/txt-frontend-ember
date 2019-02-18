@@ -2,6 +2,7 @@
 
 # Folder
 /public/image/
+/.vscode/*
 
 # compiled output
 /dist/

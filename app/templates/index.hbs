@@ -18,50 +18,64 @@
 
 <div class="container-fluid">
   
-  <h2>Best Deals</h2>
+  <h4>Find It Here</h4>
   <section class="row">
-    
+
       <div class="col-6 col-md-3 d-flex justify-content-center">
         <div>
-          {{fa-icon 'book' size=4}}
-          <p>Books</p>
+          {{fa-icon 'book' size=3}}
+          <p>{{link-to 'All Books' 'books'}}</p>
         </div>
       </div>
       <div class="col-6 col-md-3 d-flex justify-content-center">
         <div>
-          {{fa-icon 'check-circle' size=4}}
-          <p>Deals</p>
+          {{fa-icon 'check-circle' size=3}}
+          <p>Novels</p>
         </div>
       </div>
 
     <div class="col-6 col-md-3 d-flex justify-content-center">
       <div>
-        {{fa-icon 'user' size=4}}
-        <p>Join Us</p>
+        {{fa-icon 'user' size=3}}
+        <p>Education</p>
       </div>
     </div>
     <div class="col-6 col-md-3 d-flex justify-content-center">
       <div>
-        {{fa-icon 'check-circle' size=4}}
-        <p>Deals</p>
+        {{fa-icon 'check-circle' size=3}}
+        <p>Kids</p>
       </div>
     </div>
   </section>
 
-  <div class="row">
-      <div class="">footer</div>
-
-  </div>
-
-    <!-- {{#each model as |book|}}
-      <div class="">
-        {{book.cover}}
-        {{book.title}}
-        {{book.author}}
-        {{book.isbn}}
-        {{#link-to 'books.book.show' book}}Show book{{/link-to}}
+  <h4>Best Deals</h4>
+  <section class="row">
+    
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <div>
+          {{fa-icon 'book' size=3}}
+          <p>{{link-to 'Discounted' 'books'}}</p>
+        </div>
       </div>
-    {{/each}} -->
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <div>
+          {{fa-icon 'check-circle' size=3}}
+          <p>Best</p>
+        </div>
+      </div>
 
+    <div class="col-6 col-md-3 d-flex justify-content-center">
+      <div>
+        {{fa-icon 'user' size=3}}
+        <p>5 Stars</p>
+      </div>
+    </div>
+    <div class="col-6 col-md-3 d-flex justify-content-center">
+      <div>
+        {{fa-icon 'check-circle' size=3}}
+        <p>Free</p>
+      </div>
+    </div>
+  </section>
 
 </div>

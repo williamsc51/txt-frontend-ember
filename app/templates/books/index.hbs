@@ -1,1 +1,20 @@
-{{outlet}}
+
+    {{#each model as |book|}}
+      <hr>
+      <div class="containger-fluid">
+        
+        <div class="row books">
+          <div class="col-4">
+              <img src="/image/small-great-things.png" alt="">
+          </div>
+          <div class="col-8">
+            <h6>{{book.title}}</h6>
+            <p>by {{book.author}}</p>
+            <p><strong>${{book.price}}</strong></p>
+            <p>Condition: {{book.condition}}</p>
+            {{#link-to 'books.book.show' book}}View Details{{/link-to}}
+          </div>
+        </div>
+      </div>
+        
+    {{/each}}
