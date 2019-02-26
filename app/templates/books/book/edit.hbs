@@ -1,31 +1,31 @@
 <div class="container-fluid">
 
-		<h2>Edit your book...and still get paid</h2>
+		<h2>Add a book...get paid</h2>
 
-    <form onsubmit="">
+    <form onsubmit={{action "updateBook"}}>
         <div class="row">
                 <div class="col-md-12">
                     <div class="form-group form-group-sm">
                         <label class="control-label">Title</label>
-                        {{input type="text" class="form-control" value=model.title placeholder="Title"}}
+                        {{input type="text" class="form-control" value=model.title}}
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                       <label class="control-label">Author</label>
-                      {{input type="text" class="form-control" value=model.author placeholder="Author"}}
+                      {{input type="text" class="form-control" value=model.author}}
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                       <label class="control-label">ISBN</label>
-                      {{input type="text" class="form-control" value=model.isbn placeholder="ISBN"}}
+                      {{input type="text" class="form-control" value=model.isbn}}
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
                       <label class="control-label">Price</label>
-                      {{input type="text" class="form-control" value=model.price placeholder="Price"}}
+                      {{input type="text" class="form-control" value=model.price}}
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -34,10 +34,16 @@
                       {{textarea class="form-control" value=model.description}}
                     </div>
                 </div>
+
+                <img src={{model.thumbnail}} alt="">
+								<div class="col-md-12">
+										{{cover-image sendCover=(action 'sendCover')}}
+								</div>
+
 								<div class="col-md-12">
 										<div class="form-group">
 											<label class="control-label">Condition</label>
-											<select onchange="">
+											<select onchange={{action "setCondition" value="target.value"}}>
 												 <option disabled selected> {{model.condition}} </option>
 												    <option value="excellent">Excellent</option>
 												    <option value="good">Good</option>
@@ -46,17 +52,12 @@
 											</select>
 										</div>
 								</div>
-                <div class="col-md-12">
-                    <div class="form-group">
-                      <label class="control-label">Cover</label>
-                      {{input type="text" class="form-control" id='cover' value=model.cover placeholder="Cover"}}
-                    </div>
-                </div>
+                                
 								<div class="col-md-12">
 										<div class="form-group">
 											<label class="control-label">Category</label>
-											<select onchange="">
-												 <option disabled selected> {{model.category}} </option>
+											<select onchange={{action "setCategory" value="target.value"}}>
+												 <option disabled selected> {{ model.category }} </option>
 												    <option value="novel">Novel</option>
 												    <option value="college">College Level</option>
 														<option value="highSchool">High School Level</option>
@@ -66,11 +67,8 @@
 								</div>
         </div>
 
-
              <div class="col-xs-12">
                     <button type="submit" class="btn btn-primary">Update</button>
                 </div>
-
     </form>
-
 </div>

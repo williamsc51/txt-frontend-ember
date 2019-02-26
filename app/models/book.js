@@ -10,5 +10,6 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   condition: DS.attr('string'),
   thumbnail: DS.attr('string'),
-  category: DS.attr('string')
+  category: DS.attr('string'),
+  created_at: DS.attr('date')
 });

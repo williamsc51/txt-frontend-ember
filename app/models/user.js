@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  book: DS.hasMany('book'),
+  books: DS.hasMany('book'),
 
   fname: DS.attr('string'),
   lname: DS.attr('string'),

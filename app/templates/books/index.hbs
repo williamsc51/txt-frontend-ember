@@ -5,7 +5,11 @@
         
         <div class="row books">
           <div class="col-4">
-              <img src="/image/small-great-things.png" alt="">
+            {{#if book.thumbnail}}
+              <img src={{book.thumbnail}} alt="">
+            {{else}}
+              <img src="https://s3.us-east-2.amazonaws.com/txt-covers/uploads/cover/NoImage/nopicture.gif" alt="">
+            {{/if}}
           </div>
           <div class="col-8">
             <h6>{{book.title}}</h6>

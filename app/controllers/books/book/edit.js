@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import Controller from '@ember/controller';
 import { inject as service} from '@ember/service';
-//import { computed } from '@ember/object';
 
 export default Controller.extend({
 
@@ -30,24 +29,15 @@ export default Controller.extend({
       this.set('selectedCategory', selected);
     },
 
-    async createNewBook(event) {
+    async updateBook(event) {
         event.preventDefault();
-        let currentUser = this.session.data.authenticated.id;
-        let user = this.store.peekRecord('user', currentUser);
-        let newBook = this.store.createRecord('book', {
-          title: this.title,
-          author: this.author,
-          isbn: this.isbn,
-          price: this.price,
-          description: this.description,
-          condition: this.selectedCondition,
-          thumbnail: this.url,
-          category: this.selectedCategory,
-          user: user
-        });
+        let book = this.model;
+        book.set('thumbnail', this.url);
+        book.set('condition', this.selectedCondition);
+        book.set('category', this.selectedCategory);
 
-         await newBook.save();
-         this.transitionToRoute('books.book.show', newBook);
+         await book.save();
+         this.transitionToRoute('books.book.show', book);
       },
   }
 
