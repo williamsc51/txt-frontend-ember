@@ -5,11 +5,12 @@ export default Base.extend({
 
   ajax: service(),
 
-  restore() {
+  async restore(data) {
+    return data;
   },
 
   async authenticate(username, password) {
-     let response = await this.ajax.post('/token', {headers: {
+     let response = await this.ajax.post('/api/v1/token', {headers: {
         'Accept': 'application/vnd.api+json',
         'Content-Type': 'application/vnd.api+json',
       },
