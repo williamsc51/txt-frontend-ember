@@ -9,7 +9,6 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('books', function() {
     this.route('new');
-    this.route('covers');
     this.route('book', { path: '/:id'}, function(){
       this.route('show');
       this.route('edit');
@@ -17,6 +16,7 @@ Router.map(function() {
   });
   this.route('users', function() {
     this.route('profile');
+    this.route('catalog');
   });
 
   this.route('index', { path: '/'} );

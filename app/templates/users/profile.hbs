@@ -1,4 +1,4 @@
-Hi: {{model.email}}
+Hi: {{model.fname}}
 
 {{link-to 'Add to your Catolog' 'books.new'}}
 
@@ -8,6 +8,7 @@ Hi: {{model.email}}
     <section>
         <h5>Orders</h5>
         <div>
+            <p> {{#link-to 'users.catalog'}} Your Catalog {{/link-to}}</p>
             <p>Your Orders</p>
             <p>Subscribe & Save</p>
             <p>Service Request</p>

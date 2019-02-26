@@ -1,0 +1,7 @@
+<h4>Hi</h4>
+<p> Hi {{model.fname}} here is a look at your catalog </p>
+<ul class="list-group list-group-flush">
+  {{#each model.books as |book|}}
+   {{#link-to 'books.book.show' book }} <li class="list-group-item">{{book.title}}</li>{{/link-to}}
+  {{/each}}
+</ul>
