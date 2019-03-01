@@ -1,0 +1,28 @@
+<div class="cart">
+  {{#each cart.books as |book|}}
+    <div class="cart-item">
+      <div class="image">
+        <img src={{book.thumbnail}} />
+      </div>
+      <div class="details">
+        {{book.title}}
+        <br>
+        ${{book.price}}
+      </div>
+      <button {{action 'removeItem' book.id}}>Remove</button>
+    </div>
+  {{/each}}
+
+    <div>
+         <button {{action 'clear'}}>Clear</button>
+    </div>
+  totla: {{cart.total}}
+  {{stripe-checkout
+    image="logo/logo_head.png"
+    name="Txttide Books"
+    description="The best place at the best price"
+    amount= cart.centsTotal
+    label="Buy Item"
+    onToken=(action "processStripeToken")
+  }}
+</div>

@@ -8,7 +8,6 @@ export default Controller.extend({
 
   selectedCondition: null,
   selectedCategory: null,
-  url: null,
 
   actions: {
 
@@ -19,7 +18,6 @@ export default Controller.extend({
       });
       newCover.save().then((data) => (this.set('url', data.cover.url)));
     },
-    
     
     setCondition(selected) {
        this.set('selectedCondition', selected);
@@ -32,7 +30,9 @@ export default Controller.extend({
     async updateBook(event) {
         event.preventDefault();
         let book = this.model;
-        book.set('thumbnail', this.url);
+        if(this.url != null){
+          book.set('thumbnail', this.url);
+        }
         book.set('condition', this.selectedCondition);
         book.set('category', this.selectedCategory);
 

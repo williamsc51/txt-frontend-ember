@@ -21,7 +21,8 @@ Router.map(function() {
 
   this.route('index', { path: '/'} );
   this.route('sign-up');
-  this.route('login');  
+  this.route('login');
+  this.route('checkout');
 });
 
 export default Router;
