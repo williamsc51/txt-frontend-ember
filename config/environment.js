@@ -4,8 +4,8 @@ module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'txt-frontend-ember',
     environment,
-    rootURL: '/',
-    locationType: 'auto',
+    rootURL: '',
+    locationType: 'hash',
 
     fontawesome:{
       icons:{
@@ -36,6 +36,10 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV.stripe = {
+      key: "pk_test_T3VG1Gdp8GTUav96y5yp6mk8"
+    }
   }
 
   if (environment === 'test') {
