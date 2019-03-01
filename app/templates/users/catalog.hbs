@@ -1,7 +1,23 @@
-<h4>Hi</h4>
-<p> Hi {{model.fname}} here is a look at your catalog </p>
-<ul class="list-group list-group-flush">
-  {{#each model.books as |book|}}
-   {{#link-to 'books.book.show' book }} <li class="list-group-item">{{book.title}}</li>{{/link-to}}
-  {{/each}}
-</ul>
+
+<div class="alert alert-secondary">
+    Hi {{model.fname}}! Here is a look at your catalog
+</div>
+
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        {{#each model.books as |book|}}
+          <tr>
+            <td>{{#link-to 'books.book.show' book }} {{book.title}}{{/link-to}}</td>
+            <td>{{#link-to 'books.book.show' book }} {{book.author}}{{/link-to}}</td>
+          </tr>
+        {{/each}}
+    </tbody>
+</table>

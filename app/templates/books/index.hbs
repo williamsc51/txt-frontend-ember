@@ -1,3 +1,15 @@
+  <div class="container-fluid">
+    
+      <div class="input-group">
+            {{input type="text" value=search placeholder="Title" class="form-control py-2"}}
+            <span class="input-group-append">
+              <button class="btn btn-outline-secondary" type="submit">
+                  <i class="fa fa-search"></i>
+              </button>
+            </span>
+      </div>
+
+  </div>
 
     {{#each model as |book|}}
       <hr>
@@ -16,7 +28,9 @@
             <p>by {{book.author}}</p>
             <p><strong>${{book.price}}</strong></p>
             <p>Condition: {{book.condition}}</p>
-            {{#link-to 'books.book.show' book}}View Details{{/link-to}}
+            {{#link-to 'books.book.show' book}}View Details{{/link-to}} 
+            |
+            <button {{action 'addItem' book.id}}>Add to Cart</button>
           </div>
         </div>
       </div>

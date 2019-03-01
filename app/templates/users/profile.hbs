@@ -1,26 +1,37 @@
-Hi: {{model.fname}}
 
-{{link-to 'Add to your Catolog' 'books.new'}}
+<div class="alert alert-secondary">
+    Hi {{model.fname}}
+</div>
+
+
 
 <div class="container-fluid">
-    <h4>Your Account</h4>
+    <h5>Your Account</h5>
     
-    <section>
-        <h5>Orders</h5>
-        <div>
-            <p> {{#link-to 'users.catalog'}} Your Catalog {{/link-to}}</p>
-            <p>Your Orders</p>
-            <p>Subscribe & Save</p>
-            <p>Service Request</p>
-        </div>
+    <section class="alert alert-info">
+        <h6>Manage your Orders</h6>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Your Orders</li>
+            <li class="list-group-item">Subscribe & Save</li>
+            <li class="list-group-item">Service Request</li>
+        </ul>
     </section>
 
-    <section>
-        <h5>Account Settings</h5>
-        <div>
-            <p>Login & Security</p>
-            <p>Notifications</p>
-            <p>Payment Methods</p>
-        </div>
+    <section class="alert alert-info">
+        <h6>Manage your listings </h6>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"> {{#link-to 'users.catalog'}} Your Catalog {{/link-to}}</li>
+            <li class="list-group-item">{{#link-to 'books.new'}} Add to your Catolog {{/link-to}}</li>
+            <li class="list-group-item">Payment Methods</li>
+        </ul>
+    </section>
+
+    <section class="alert alert-info">
+        <h6>Account Settings</h6>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Login & Security</li>
+            <li class="list-group-item">Notifications</li>
+            <li class="list-group-item">Payment Methods</li>
+        </ul>
     </section>
 </div>
