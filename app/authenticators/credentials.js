@@ -1,5 +1,6 @@
 import Base from 'ember-simple-auth/authenticators/base';
 import { inject as service} from '@ember/service';
+import ENV from 'txt-frontend-ember/config/environment';
 
 export default Base.extend({
 
@@ -10,7 +11,7 @@ export default Base.extend({
   },
 
   async authenticate(username, password) {
-     let response = await this.ajax.post('/api/v1/token', {headers: {
+     let response = await this.ajax.post(`${ENV.host}/api/v1/token`, {headers: {
         'Accept': 'application/vnd.api+json',
         'Content-Type': 'application/vnd.api+json',
       },
