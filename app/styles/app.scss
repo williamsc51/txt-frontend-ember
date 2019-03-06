@@ -196,3 +196,9 @@ body > .ember-view{
 .sign-out{
   color: #ffffff;
 }
+
+.cats{
+  height: 150px;
+  overflow-x: scroll;
+  white-space: nowrap;
+}

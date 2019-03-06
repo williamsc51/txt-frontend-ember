@@ -27,7 +27,9 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    host: 'http://localhost:3000'
   };
 
   if (environment === 'development') {
@@ -56,6 +58,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.host = 'http://73.47.229.11:8080'
   }
 
   return ENV;

@@ -17,8 +17,22 @@
   </header>
 
 <div class="container-fluid">
+
+    <h6>New Novels</h6>
+    <section class="cats">
+      {{#each model.novels as |book|}}
+         <img src={{book.thumbnail}} alt="" width="150px" height="150px">
+      {{/each}}
+    </section>
+
+    <h6>College</h6>
+    <section class="cats">
+      {{#each model.college as |book|}}
+         <img src={{book.thumbnail}} alt="" width="150px" height="150px">
+      {{/each}}
+    </section>
   
-  <h4>Find It Here</h4>
+  {{!-- <h4>Find It Here</h4>
   <section class="row">
 
       <div class="col-6 col-md-3 d-flex justify-content-center">
@@ -76,6 +90,6 @@
         <p>Free</p>
       </div>
     </div>
-  </section>
+  </section> --}}
 
 </div>

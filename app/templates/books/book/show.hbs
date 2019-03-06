@@ -29,5 +29,7 @@
       <p>Conidition: {{model.condition}}</p>
     </div>
   </div>
-  {{#link-to 'books.book.edit' model}}Edit{{/link-to}}
+  {{#if isOwner}}
+    {{#link-to 'books.book.edit' model}}Edit{{/link-to}}
+  {{/if}}
 </div>
