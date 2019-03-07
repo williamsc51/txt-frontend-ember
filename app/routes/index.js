@@ -1,7 +1,10 @@
 import Route from '@ember/routing/route';
 import RSVP from 'rsvp';
+import { inject as service} from '@ember/service';
 
 export default Route.extend({
+
+  splashscreenService: service('ember-cordova/splash'),
 
   model(){
     return RSVP.hash({
@@ -10,6 +13,10 @@ export default Route.extend({
     })
    
   },
+
+  afterModel(){
+    this.splashscreenService.hide();
+  }
 
 
 })
