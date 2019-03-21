@@ -1,14 +1,5 @@
-  <div class="container-fluid">
-    <div class="input-group">
-          <input class="form-control py-2" type="search" value="search" id="example-search-input">
-          <span class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button">
-                <i class="fa fa-search"></i>
-            </button>
-          </span>
-    </div>
-  </div>
 
+  {{book-search}}
 
   <header class="banner d-flex justify-content-center align-items-center">
       <div>
@@ -19,77 +10,18 @@
 <div class="container-fluid">
 
     <h6>New Novels</h6>
-    <section class="cats">
+    <section class="row">
       {{#each model.novels as |book|}}
-         <img src={{book.thumbnail}} alt="" width="150px" height="150px">
+        {{!-- <div class="col-6"> <img src={{book.thumbnail}} alt="Book Cover" class="index-img"> </div> --}}
+        <div class="col-6"> <img src="image/cat.png" alt="Book Cover" class="index-img"> </div>
       {{/each}}
     </section>
-
-    <h6>College</h6>
-    <section class="cats">
-      {{#each model.college as |book|}}
-         <img src={{book.thumbnail}} alt="" width="150px" height="150px">
-      {{/each}}
-    </section>
-  
-  {{!-- <h4>Find It Here</h4>
-  <section class="row">
-
-      <div class="col-6 col-md-3 d-flex justify-content-center">
-        <div>
-          {{fa-icon 'book' size=3}}
-          <p>{{link-to 'All Books' 'books'}}</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-3 d-flex justify-content-center">
-        <div>
-          {{fa-icon 'check-circle' size=3}}
-          <p>Novels</p>
-        </div>
-      </div>
-
-    <div class="col-6 col-md-3 d-flex justify-content-center">
-      <div>
-        {{fa-icon 'user' size=3}}
-        <p>Education</p>
-      </div>
-    </div>
-    <div class="col-6 col-md-3 d-flex justify-content-center">
-      <div>
-        {{fa-icon 'check-circle' size=3}}
-        <p>Kids</p>
-      </div>
-    </div>
-  </section>
-
-  <h4>Best Deals</h4>
-  <section class="row">
     
-      <div class="col-6 col-md-3 d-flex justify-content-center">
-        <div>
-          {{fa-icon 'book' size=3}}
-          <p>{{link-to 'Discounted' 'books'}}</p>
-        </div>
-      </div>
-      <div class="col-6 col-md-3 d-flex justify-content-center">
-        <div>
-          {{fa-icon 'check-circle' size=3}}
-          <p>Best</p>
-        </div>
-      </div>
 
-    <div class="col-6 col-md-3 d-flex justify-content-center">
-      <div>
-        {{fa-icon 'user' size=3}}
-        <p>5 Stars</p>
-      </div>
-    </div>
-    <div class="col-6 col-md-3 d-flex justify-content-center">
-      <div>
-        {{fa-icon 'check-circle' size=3}}
-        <p>Free</p>
-      </div>
-    </div>
-  </section> --}}
-
+    {{!-- <h6>College</h6>
+    <section class="">
+      {{#each model.college as |book|}}
+         <img src={{book.thumbnail}} alt="Book Cover">
+      {{/each}}
+    </section> --}}
 </div>
