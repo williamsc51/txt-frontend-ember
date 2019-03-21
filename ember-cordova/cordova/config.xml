@@ -81,9 +81,9 @@
         <splash density="port-xxxhdpi" id="port-xxxhdpi" src="res/screen/android/port-xxxhdpi.png" />
         <splash density="land-xxxhdpi" id="land-xxxhdpi" src="res/screen/android/land-xxxhdpi.png" />
     </platform>
+    <engine name="android" spec="~6.2.3" />
+    <engine name="ios" spec="~4.4.0" />
     <plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <plugin name="cordova-plugin-wkwebview-engine" spec="~1.1.4" />
-    <engine name="android" spec="~6.2.3" />
-    <engine name="ios" spec="~4.4.0" />
 </widget>
