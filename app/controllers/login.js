@@ -12,7 +12,7 @@ export default Controller.extend({
       event.preventDefault();
       let { email, password } = this;
 
-      await this.get('session').authenticate('authenticator:credentials', email, password);
+      await this.get('session').authenticate('authenticator:credentials', email.toLowerCase(), password);
 
       await this.transitionToRoute('users.profile');
     }

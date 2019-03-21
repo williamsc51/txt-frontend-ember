@@ -10,7 +10,7 @@ export default Controller.extend({
   actions: {
     async createNewUser(event){
       event.preventDefault();
-      let newUser = this.store.createRecord('user', { fname: this.fname, lname: this.lname, email: this.email, password: this.password});
+      let newUser = this.store.createRecord('user', { fname: this.fname, lname: this.lname, email: this.email.toLowerCase(), password: this.password});
 
       await newUser.save();
       this.transitionToRoute('index');
