@@ -1,28 +1,56 @@
 <div class="cart">
+  <h4>You're almost a book owner</h4>
+  <p>Lets complete this the proccess here</p>
+
+    <div class="alert-primary">
+      <h4>Your Cart Total: {{cart.roundedTotal}}</h4>
+    </div>
+    
   {{#each cart.books as |book|}}
-    <div class="cart-item">
-      <div class="image">
-        <img src={{book.thumbnail}} />
+    <hr>
+    <div class="check-out">
+      <div class="row">
+        <div class="col-4">
+          <img class="index-img" src={{book.thumbnail}} />
+        </div>
+        <div class="col-8">
+          <h5>{{book.title}}</h5>
+          <p>${{book.price}}</p>
+        </div>
       </div>
-      <div class="details">
-        {{book.title}}
-        <br>
-        ${{book.price}}
+      <div class="row">
+        <div class="col">
+          <select name="" id="" class="btn btn-default dropdown-toggle">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        
+          <button class="btn btn-danger" {{action 'removeItem' book.id}}>Remove</button>
+        </div>
       </div>
-      <button {{action 'removeItem' book.id}}>Remove</button>
     </div>
   {{/each}}
 
     <div>
-         <button {{action 'clear'}}>Clear</button>
+         <button class="btn btn-default" {{action 'clear'}}>Clear</button>
     </div>
-  totla: {{cart.total}}
-  {{stripe-checkout
-    image="logo/logo_head.png"
-    name="Txttide Books"
-    description="The best place at the best price"
-    amount= cart.centsTotal
-    label="Buy Item"
-    onToken=(action "processStripeToken")
-  }}
+
+    <div>
+      Cart Total: {{cart.roundedTotal}}
+    </div>
+
+    
+      {{#stripe-checkout
+        image="logo/logo_head.png"
+        name="Txttide Books"
+        description="The best place at the best price"
+        amount=cart.centsTotal
+        onToken=(action "processStripeToken")
+      }}  
+          <button type="button" class="btn btn-success" disabled={{cart.emptyCart}}>Proceed to Checkout</button>
+      {{/stripe-checkout}}
+    
 </div>

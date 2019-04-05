@@ -11,13 +11,11 @@
             {{#navbar.content}}
               {{#navbar.nav as |nav|}}
                   {{#nav.item}}{{#nav.link-to "index"}} Home {{/nav.link-to}}{{/nav.item}}
-                {{#if session.isAuthenticated}}  
                   {{#nav.item}}{{#nav.link-to "users.profile"}} My Account {{/nav.link-to}}{{/nav.item}}
-                {{/if}}
-                  {{#nav.item}}{{#nav.link-to "books"}} Deals {{/nav.link-to}}{{/nav.item}}
+                  {{#nav.item}}{{#nav.link-to "books"}} All Books {{/nav.link-to}}{{/nav.item}}
                   {{#nav.item}}{{#nav.link-to "sign-up"}} Register {{/nav.link-to}}{{/nav.item}}
                 {{#if session.isAuthenticated}}
-                  {{#nav.item}}<button type="button" {{action "logOut"}}>Logout</button>{{/nav.item}}
+                  {{#nav.item}}<span {{action "logOut"}}>Logout</span>{{/nav.item}}
                 {{else}}
                   {{#nav.item}}{{#nav.link-to "login"}} Login {{/nav.link-to}}{{/nav.item}}
                 {{/if}}

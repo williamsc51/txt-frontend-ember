@@ -8,8 +8,8 @@ export default Route.extend({
 
   model(){
     return RSVP.hash({
-      novels: this.store.query('book', {filter: {category: 'novel'}}),
-      college: this.store.query('book', {filter: {category: 'college'}})
+      novels: this.store.query('book', {page: {limit: 4}, filter: {category: "novel"}}),
+      college: this.store.query('book',{page: {limit: 4}, filter: {category: 'college'}})
     })
    
   },
@@ -17,6 +17,5 @@ export default Route.extend({
   afterModel(){
     this.splashscreenService.hide();
   }
-
 
 })

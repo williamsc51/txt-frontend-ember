@@ -7,6 +7,8 @@ export default Service.extend({
 
     store: service(),
 
+    title: 'Hello',
+
     bookIds: storageFor('cart'),
     books: computed('bookIds.[]', function(){
         if(this.get('bookIds.length') == 0){
@@ -16,6 +18,16 @@ export default Service.extend({
             return this.store.query('book', { filter: {id: this.get('bookIds.content')}} ); 
         }
         
+      }),
+
+      emptyCart: computed('total', function(){
+
+        if(this.total === 0){
+          return true
+        }
+        else{
+          return false
+        }
       }),
 
       add(bookId){
@@ -33,6 +45,11 @@ export default Service.extend({
       bookPrices: computed.mapBy('books', 'price'),
 
       total: computed.sum('bookPrices'),
+
+      roundedTotal: computed('total', function(){
+        return this.get('total').toFixed(2)
+      }),
+
       
       centsTotal: computed('total', function(){
         return this.get('total') * 100;
