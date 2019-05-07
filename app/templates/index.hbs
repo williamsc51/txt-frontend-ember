@@ -9,20 +9,30 @@
 
 <div class="container-fluid">
 
-    <h6>New Novels</h6>
-    <section class="row">
-      {{#each model.novels as |book|}}
-        {{!-- <div class="col-6"> <img src={{book.thumbnail}} alt="Book Cover" class="index-img"> </div> --}}
-        <div class="col-6"> <img src="image/cat.png" alt="Book Cover" class="index-img"> </div>
-      {{/each}}
+    
+    <section>
+      <div class="row">
+        <div class="row">
+          <div class="col"><h6>New Novels</h6></div>
+        </div>
+        <div class="row">
+          <div class="col-6"><img src="image/cat.png" alt=""></div>
+          <div class="col-6"><img src="image/cat.png" alt=""></div>
+        </div>
+        <div class="row">
+          <div class="col-6">Image1</div>
+          <div class="col-6">Image2</div>
+        </div>
+        <div class="row">
+          <div class="col-6"><img src="image/cat.png" alt=""></div>
+          <div class="col-6"><img src="image/cat.png" alt=""></div>
+        </div>
+                <div class="row">
+          <div class="col-6">Image3</div>
+          <div class="col-6">Image4</div>
+        </div>
+      </div>
+      
     </section>
     
-
-    <h6>College</h6>
-    <section class="row">
-      {{#each model.college as |book|}}
-        {{!-- <div class="col-6"> <img src={{book.thumbnail}} alt="Book Cover" class="index-img"> </div> --}}
-        <div class="col-6"> <img src="image/cat.png" alt="Book Cover" class="index-img"> </div>
-      {{/each}}
-    </section>
 </div>
