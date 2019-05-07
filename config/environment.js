@@ -58,7 +58,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
-    ENV.host = 'http://73.47.229.11:8080'
+    ENV.host = 'https://txttide.herokuapp.com'
   }
 
   return ENV;
