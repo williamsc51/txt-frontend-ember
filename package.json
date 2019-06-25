@@ -69,5 +69,10 @@
   },
   "dependencies": {
     "ember-bootstrap": "^2.1.2"
+  },
+  "ember-addon": {
+    "paths": [
+      "lib/paypal-buttons"
+    ]
   }
 }
