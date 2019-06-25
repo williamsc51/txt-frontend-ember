@@ -7,16 +7,23 @@ export default Controller.extend({
     session: service(),
     ajax: service(),
 
+
   actions: {
+
+    payment(){
+        let total = this.cart.roundedTotal
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: total
+            }
+          }]
+        });
+    },
 
     removeItem(bookId){
       this.cart.remove(bookId);
     },
-
-    // checkAmount(){
-    //   this.set('amount', )
-    //   console.log(this.amount)
-    // },
 
     clear(){
       this.cart.clear();
@@ -35,5 +42,6 @@ export default Controller.extend({
       })
     }
 
-  }
+  },
+
 });
