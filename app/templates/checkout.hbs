@@ -42,6 +42,6 @@
       Cart Total: {{cart.roundedTotal}}
     </div>
 
-    {{paypal-button payment=(action "payment")}}
+    {{paypal-button createPayment=(action "createPayPalOrder") approvePayment=(action "approvePayPalOrder") }}
     
 </div>
