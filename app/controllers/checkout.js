@@ -7,18 +7,31 @@ export default Controller.extend({
     session: service(),
     ajax: service(),
 
-
   actions: {
 
-    payment(){
-        let total = this.cart.roundedTotal
-        return actions.order.create({
-          purchase_units: [{
-            amount: {
-              value: total
-            }
-          }]
-        });
+    async createPayPalOrder() {
+      const res = await fetch(`${ENV.host}/api/v1/purchase/create_order`, {
+        method: 'post',
+        headers: {
+          'content-type': 'application/json'
+        }
+      });
+      const data = await res.json();
+      return data.id;
+    },
+
+    async approvePayPalOrder(ordID) {
+      const res = await fetch(`${ENV.host}/api/v1/purchase/capture_order`, {
+        method: 'post',
+        headers: {
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          oID: ordID
+        })
+      });
+      const details = await res.json();
+      alert('Transaction funds captured from ' + details.payer.name.given_name);
     },
 
     removeItem(bookId){
@@ -29,18 +42,18 @@ export default Controller.extend({
       this.cart.clear();
     },
 
-    processStripeToken({card, email, id}){
-      return this.ajax.request(`${ENV.host}/api/v1/purchase`,{
-        method: 'POST',
-        data: { 
-          card, 
-          email, 
-          id, 
-          amount: this.cart.total, 
-          user_id: this.session.data.authenticated.id
-        }
-      })
-    }
+    // processStripeToken({card, email, id}){
+    //   return this.ajax.request(`${ENV.host}/api/v1/purchase`,{
+    //     method: 'POST',
+    //     data: { 
+    //       card, 
+    //       email, 
+    //       id, 
+    //       amount: this.cart.total, 
+    //       user_id: this.session.data.authenticated.id
+    //     }
+    //   })
+    // }
 
   },
 
