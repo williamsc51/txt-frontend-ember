@@ -167,35 +167,67 @@ body > .ember-view{
   display: block;
 }
 
-.footer{
-  color: white;
-  text-align: center;
-}
-.footer-links{
-  background-color: blue;
+/* ATOMIC ARCHITECTURE */
+
+/********************* VARIABLES ************************/
+$blue: #3838fb;
+$darkslategray: #2f4f4f;
+
+/********************* BACKGROUND ************************/
+.bgc-blue{
+  background-color: $blue;
 }
 
-.footer-links ul{
+.bgc-darkslategray{
+  background-color: $darkslategray;
+}
+
+/********************* FONT ************************/
+.fc-white{
+ color: #ffffff;
+}
+
+.fz-x{
+  font-size: 0.8rem;
+}
+
+.tx-center{
+  text-align: center;
+}
+
+/********************* LIST STYLE ************************/
+.ls-none{
   list-style-type: none;
 }
 
-.footer-links ul li{
-  font-size: 0.8em;
+.ls-inline > ul > li{
+  display: inline;
 }
 
-
-.footer-copyright{
-  background-color: darkslategray;
-  font-size: 0.8em;
+/********************* BORDERS ************************/
+.no-borders{
+  border: 0rem
 }
+
+.nav{
+  margin: 0% auto;
+}
+
+@include media-breakpoint-down(md) {
+  .navbar-collapse{
+    order: 3;
+    align-items: flex-start;
+  }
+ }
+
+
+
+
 
 .books img{
   width: 100%;
 }
 
-.sign-out{
-  color: #ffffff;
-}
 
 .index-img{
   max-width: 100%;

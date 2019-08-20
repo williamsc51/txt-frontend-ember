@@ -6,7 +6,7 @@
 
           <img src="logo/logo_head.png" atl="Logo" class="logo" />
 
-          {{#link-to 'checkout'}}<i style="font-size:24px" class="fa">&#xf07a;</i> {{cart.bookIds.length}} {{/link-to}}
+          
 
             {{#navbar.content}}
               {{#navbar.nav as |nav|}}
@@ -15,44 +15,70 @@
                   {{#nav.item}}{{#nav.link-to "books"}} All Books {{/nav.link-to}}{{/nav.item}}
                   {{#nav.item}}{{#nav.link-to "sign-up"}} Register {{/nav.link-to}}{{/nav.item}}
                 {{#if session.isAuthenticated}}
-                  {{#nav.item}}<span {{action "logOut"}}>Logout</span>{{/nav.item}}
+                  {{#nav.item}}{{#nav.link-to "sign-up"}}Logout{{/nav.link-to}}{{/nav.item}}
                 {{else}}
                   {{#nav.item}}{{#nav.link-to "login"}} Login {{/nav.link-to}}{{/nav.item}}
                 {{/if}}
                 {{/navbar.nav}}
             {{/navbar.content}}
 
+          {{#link-to 'checkout'}}<i style="font-size:24px" class="fa">&#xf07a;</i> {{cart.bookIds.length}} {{/link-to}}
+
       {{/bs-navbar}}
+
+
+  {{!-- <div id="menu" class="d-flex flex-row justify-content-around">
+    <img src="logo/logo_head.png" atl="Logo" class="logo" />
+
+    <nav class="d-inline">
+      <ul class="ls-inline ls-none">
+        <li> <a href=""> Home </a></li>
+        <li><a href="">My Account </a></li>
+        <li><a href="">All Books </a></li>
+        <li><a href="">Register </a></li>
+        <li>
+          {{#if session.isAuthenticated}}
+            <a href="">Logout</a>
+          {{else}}
+            <a href="">Login </a>
+          {{/if}}
+        </li>
+      </ul>  
+    </nav>
+
+    <a href=""><i style="font-size:24px" class="fa">&#xf07a;</i> {{cart.bookIds.length}} </a>
+  </div> --}}
 
   <div class="content flex-shink-0"> {{outlet}}</div>
 
-  <footer class="footer mt-auto">
+  <footer class="fc-white tx-center fz-x mt-auto">
     <div class="container-fluid">
-        <div class="row d-flex footer-links">
-            <div class="col-6">
-              <ul>
+        <div class="row d-flex bgc-blue">
+            <div class="col-6 ">
+              <ul class="ls-none">
                 <li>txt.com</li>
                 <li>Contact Us</li>
                 <li>Sell Your Books</li>
               </ul>
             </div>
             <div class="col-6">
-              <ul>
+              <ul class="ls-none">
                 <li>Your Orders</li>
                 <li>Your Account</li>
                 <li>Wish List</li>
               </ul>
             </div>
         </div>
-        <div class="row d-flex justify-content-center footer-copyright">
+
+        <div class="row d-flex flex-column bgc-darkslategray">
             
             {{#if session.isAuthenticated }}
-              <button class="sign-out" type="button" {{action "logOut"}}>Logout</button>
+              <button class="fc-white bgc-darkslategray no-borders" type="button" {{action "logOut"}}>Logout</button>
             {{else}}
               <button type="button" disabled>Logout</button>
             {{/if}}
 
-            <div class="col-12">Copy right. All rights reserved</div>
+          <p> Copy right. All rights reserved </p>
         </div>
 
     </div>
