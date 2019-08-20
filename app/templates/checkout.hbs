@@ -42,15 +42,6 @@
       Cart Total: {{cart.roundedTotal}}
     </div>
 
-    
-      {{#stripe-checkout
-        image="logo/logo_head.png"
-        name="Txttide Books"
-        description="The best place at the best price"
-        amount=cart.centsTotal
-        onToken=(action "processStripeToken")
-      }}  
-          <button type="button" class="btn btn-success" disabled={{cart.emptyCart}}>Proceed to Checkout</button>
-      {{/stripe-checkout}}
+    {{paypal-button createPayment=(action "createPayPalOrder") approvePayment=(action "approvePayPalOrder") }}
     
 </div>
