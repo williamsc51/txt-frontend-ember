@@ -22,8 +22,8 @@ Router.map(function() {
   this.route('index', { path: '/'} );
   this.route('sign-up');
   this.route('login');
-  this.route('checkout');
   this.route('search_result');
+  this.route('carts');
 });
 
 export default Router;

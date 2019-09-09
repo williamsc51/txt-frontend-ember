@@ -5,8 +5,10 @@
     <div class="alert-primary">
       <h4>Your Cart Total: {{cart.roundedTotal}}</h4>
     </div>
+
+    {{model.id}}
     
-  {{#each cart.books as |book|}}
+  {{#each model.books as |book|}}
     <hr>
     <div class="check-out">
       <div class="row">

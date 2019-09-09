@@ -6,17 +6,17 @@ import { storageFor } from 'ember-local-storage';
 export default Service.extend({
 
     store: service(),
+    session: service(),
 
-    title: 'Hello',
 
     bookIds: storageFor('cart'),
     books: computed('bookIds.[]', function(){
-        if(this.get('bookIds.length') == 0){
-            return []
-        }
-        else{
-            return this.store.query('book', { filter: {id: this.get('bookIds.content')}} ); 
-        }
+
+      if(this.get('bookIds.length') == 0){
+          return []
+      } else{
+            return this.store.query('book', { filter: {id: this.get('bookIds.content')}} );
+          } 
         
       }),
 
@@ -35,7 +35,7 @@ export default Service.extend({
       },
 
       remove(bookId){
-        this.bookIds.removeObject(bookId);
+         this.bookIds.removeObject(bookId); 
       },
 
       clear(){
