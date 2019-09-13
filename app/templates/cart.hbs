@@ -1,0 +1,30 @@
+<div class="cart">
+  <h4>You're almost a book owner</h4>
+  <p>Lets complete this the proccess here</p>
+
+    <div class="alert-primary">
+      <h4>Your Cart Total: {{cart.roundedTotal}}</h4>
+    </div>
+
+{{#if session.isAuthenticated}}
+  {{#each model.books as |book|}}
+    {{cart-list book=book}}
+  {{/each}}
+{{else}}
+  {{#each cart.books as |book|}}
+    {{cart-list book=book}}
+  {{/each}}
+{{/if}}
+
+<div>
+         <button class="btn btn-default" {{action 'clear'}}>Clear</button>
+    </div>
+
+    <div>
+      Cart Total: {{cart.roundedTotal}}
+    </div>
+
+    {{paypal-button createPayment=(action "createPayPalOrder") approvePayment=(action "approvePayPalOrder") }}
+
+
+</div>

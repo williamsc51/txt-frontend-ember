@@ -1,13 +1,4 @@
-<div class="cart">
-  <h4>You're almost a book owner</h4>
-  <p>Lets complete this the proccess here</p>
-
-    <div class="alert-primary">
-      <h4>Your Cart Total: {{cart.roundedTotal}}</h4>
-    </div>
-    
-  {{#each cart.books as |book|}}
-    <hr>
+<hr>
     <div class="check-out">
       <div class="row">
         <div class="col-4">
@@ -32,16 +23,5 @@
         </div>
       </div>
     </div>
-  {{/each}}
 
-    <div>
-         <button class="btn btn-default" {{action 'clear'}}>Clear</button>
-    </div>
-
-    <div>
-      Cart Total: {{cart.roundedTotal}}
-    </div>
-
-    {{paypal-button createPayment=(action "createPayPalOrder") approvePayment=(action "approvePayPalOrder") }}
-    
-</div>
+{{yield}}
