@@ -23,7 +23,7 @@ Router.map(function() {
   this.route('sign-up');
   this.route('login');
   this.route('search_result');
-  this.route('carts');
+  this.route('cart');
 });
 
 export default Router;
