@@ -10,6 +10,14 @@ export default Service.extend({
 
 
     bookIds: storageFor('cart'),
+    
+    bookCount: computed('bookIds', 'count', function(){
+      if(this.session.isAuthenticated){
+        let bk = this.store.peekAll('book')
+         return bk.length
+      } else { return this.bookIds.length}
+    }),
+
     books: computed('bookIds.[]', function(){
 
       if(this.get('bookIds.length') == 0){
@@ -30,8 +38,8 @@ export default Service.extend({
         }
       }),
 
-      add(bookId){
-        this.bookIds.addObject(bookId);
+       add(bookId){
+          this.bookIds.addObject(bookId);
       },
 
       remove(bookId){

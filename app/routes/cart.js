@@ -8,14 +8,7 @@ export default Route.extend({
     
 
     model(){
-        if(this.session.isAuthenticated){
-            let current_user = this.session.data.authenticated.id
-            return this.store.queryRecord('cart', {user_id: current_user, include: 'books'})
-        }
-        else{
-            return this.cart.books
-        }
-       
+        return this.modelFor('application');
     }
 
 });

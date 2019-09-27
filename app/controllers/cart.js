@@ -96,14 +96,10 @@ export default Controller.extend({
         method: 'post',
         headers: {
           'content-type': 'application/json'
-<<<<<<< HEAD
         },
         body: JSON.stringify({
           purchase
         })
-=======
-        }
->>>>>>> 784b0089fbb66e35e5647931c08dcee5fafa9a91
       });
       const data = await res.json();
       return data.id;
@@ -131,25 +127,7 @@ export default Controller.extend({
       this.cart.clear();
     },
 
-<<<<<<< HEAD
 
   },
 
-=======
-    // processStripeToken({card, email, id}){
-    //   return this.ajax.request(`${ENV.host}/api/v1/purchase`,{
-    //     method: 'POST',
-    //     data: { 
-    //       card, 
-    //       email, 
-    //       id, 
-    //       amount: this.cart.total, 
-    //       user_id: this.session.data.authenticated.id
-    //     }
-    //   })
-    // }
-
-  },
-
->>>>>>> 784b0089fbb66e35e5647931c08dcee5fafa9a91
 });

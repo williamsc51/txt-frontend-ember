@@ -4,4 +4,6 @@ export default DS.Model.extend({
     user: DS.belongsTo(),
     books: DS.hasMany(),
 
+    user_id: DS.attr('number')
+
 });
