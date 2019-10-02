@@ -3433,7 +3433,7 @@ corber-ember-livereload@^0.0.2:
     broccoli-funnel "^2.0.1"
     ember-cli-babel "^6.6.0"
 
-corber@1.4.0:
+corber@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/corber/-/corber-1.4.0.tgz#7864b50a4f9c351e7ffddbf147d63874484ac3ba"
   integrity sha512-ozD8qjBQ3iK08/ZOj6LHvgo+UZL8gT/EjcNuM3mvh2qhKZ2d+RJQxOgBvFTBvPFHZKQSQODOIaQ+ERVdbiXUnw==

@@ -22,7 +22,7 @@
     "active-model-adapter": "^2.2.0",
     "bootstrap": "^4.3.1",
     "broccoli-asset-rev": "^3.0.0",
-    "corber": "1.4.0",
+    "corber": "^1.4.0",
     "corber-ember-livereload": "^0.0.2",
     "ember-ajax": "^5.0.0",
     "ember-cli": "~3.13.0",
