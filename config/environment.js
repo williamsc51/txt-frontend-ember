@@ -29,7 +29,7 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    host: 'http://localhost:3000'
+    host: 'http://10.0.0.165:3000'
   };
 
   if (environment === 'development') {

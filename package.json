@@ -13,7 +13,7 @@
   "scripts": {
     "build": "ember build",
     "lint:js": "eslint .",
-    "start": "ember serve --proxy=http://localhost:3000",
+    "start": "ember serve",
     "test": "ember test"
   },
   "devDependencies": {
@@ -22,6 +22,8 @@
     "active-model-adapter": "^2.2.0",
     "bootstrap": "^4.3.1",
     "broccoli-asset-rev": "^3.0.0",
+    "corber": "1.4.0",
+    "corber-ember-livereload": "^0.0.2",
     "ember-ajax": "^5.0.0",
     "ember-cli": "~3.13.0",
     "ember-cli-app-version": "^3.0.0",
@@ -45,7 +47,6 @@
     "ember-cli-stripe": "^2.0.0",
     "ember-cli-uglify": "^3.0.0",
     "ember-concurrency": "^1.1.0",
-    "ember-cordova": "^1.0.9",
     "ember-cordova-splash": "^0.1.9",
     "ember-data": "~3.13.1",
     "ember-export-application-global": "^2.0.0",
@@ -62,7 +63,8 @@
     "js-base64": "^2.5.1",
     "loader.js": "^4.2.3",
     "popper.js": "^1.15.0",
-    "qunit-dom": "^0.9.0"
+    "qunit-dom": "^0.9.0",
+    "sass": "^1.22.12"
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
