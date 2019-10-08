@@ -39,7 +39,17 @@ export default Service.extend({
       }),
 
        add(bookId){
-          this.bookIds.addObject(bookId);
+        if(this.session.isAuthenticated){
+          let current_user = this.session.data.authenticated.id
+          return this.store.createRecord('cart', {user_id: current_user, include: 'books'}).catch(() => {
+              let newCart = this.store.createRecord('cart', {
+                  user_id: current_user
+              });
+              newCart.save();
+          })
+        }else{
+            this.bookIds.addObject(bookId);
+          }
       },
 
       remove(bookId){
