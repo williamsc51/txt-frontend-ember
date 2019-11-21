@@ -1,0 +1,24 @@
+<section class="main-body">
+  <div class="main-body-header">
+    <div>
+      <h1>{{title}}</h1>
+      <p>{{slogan}}</p>
+    </div>
+    <a href="">View all</a>
+  </div>
+  <div class="main-body-content">
+    {{#each books as |book|}}
+      <div class="main-body-content-item">
+        <div>
+          <img src={{book.thumbnail}} alt="">
+          <span class="sale">-15%</span>
+        </div>
+        <article>
+          <span>{{book.author}}</span>
+          <h5>{{book.title}}</h5>
+          <p>${{book.price}}</p>
+        </article>
+      </div>
+    {{/each}}
+  </div>
+</section>

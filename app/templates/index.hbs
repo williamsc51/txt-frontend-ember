@@ -1,32 +1,22 @@
 
-  {{book-search}}
+  <div class="search">{{book-search}}</div>
 
-  <header class="banner d-flex justify-content-center align-items-center">
+  <header class="banner">
       <div>
-        <img src="logo/txttide.png" width="200px" height="200px" alt="">
+        <img src="logo/txttide.png" alt="">
       </div>
   </header>
 
-<div class="container-fluid">
 
-    
-    <section class="d-flex flex-wrap justify-content-around">
-      <article>
-        <img src="https://via.placeholder.com/150" alt="">
-        <p>The cat in the Hat ratatata</p>
-      </article>
-      <article>
-        <img src="https://via.placeholder.com/150" alt="">
-        <p>Small Great Things</p>
-      </article>
-      <article>
-        <img src="https://via.placeholder.com/150" alt="">
-        <p>Item</p>
-      </article>
-      <article>
-        <img src="https://via.placeholder.com/150" alt="">
-        <p>Item</p>
-      </article>
-    </section>
-    
-</div>
+  {{category-list
+    title = "Sale"
+    slogan = "Back to school Sale"
+    books = model.novels
+  }}
+
+  {{category-list
+    title = "College"
+    slogan = "Back to school Sale"
+    books = model.college
+  }}
+

@@ -6,8 +6,6 @@
 
           <img src="logo/logo_head.png" atl="Logo" class="logo" />
 
-          
-
             {{#navbar.content}}
               {{#navbar.nav as |nav|}}
                   {{#nav.item}}{{#nav.link-to "index"}} Home {{/nav.link-to}}{{/nav.item}}
@@ -27,48 +25,10 @@
       {{/bs-navbar}}
 
 
-  {{!-- <div id="menu" class="d-flex flex-row justify-content-around">
-    <img src="logo/logo_head.png" atl="Logo" class="logo" />
-
-    <nav class="d-inline">
-      <ul class="ls-inline ls-none">
-        <li> <a href=""> Home </a></li>
-        <li><a href="">My Account </a></li>
-        <li><a href="">All Books </a></li>
-        <li><a href="">Register </a></li>
-        <li>
-          {{#if session.isAuthenticated}}
-            <a href="">Logout</a>
-          {{else}}
-            <a href="">Login </a>
-          {{/if}}
-        </li>
-      </ul>  
-    </nav>
-
-    <a href=""><i style="font-size:24px" class="fa">&#xf07a;</i> {{cart.bookIds.length}} </a>
-  </div> --}}
-
-  <div class="content flex-shink-0"> {{outlet}}</div>
+  <div class="body-content"> {{outlet}}</div>
 
   <footer class="fc-white tx-center fz-x mt-auto">
     <div class="container-fluid">
-        <div class="row d-flex bgc-blue">
-            <div class="col-6 ">
-              <ul class="ls-none">
-                <li>txt.com</li>
-                <li>Contact Us</li>
-                <li>Sell Your Books</li>
-              </ul>
-            </div>
-            <div class="col-6">
-              <ul class="ls-none">
-                <li>Your Orders</li>
-                <li>Your Account</li>
-                <li>Wish List</li>
-              </ul>
-            </div>
-        </div>
 
         <div class="row d-flex flex-column bgc-darkslategray">
             
