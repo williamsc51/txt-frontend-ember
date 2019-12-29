@@ -164,15 +164,6 @@ body > .ember-view{
 }
 /* Login  Form CSS End*/
 
-.banner{
-  background: url('banner-bg.png') no-repeat center center;
-  background-size: cover;
-  height: 40vh;
-}
-.banner img{
-  width: 200px;
-  height: 200px;
-}
 
 /* ATOMIC ARCHITECTURE */
 
@@ -247,7 +238,7 @@ $darkslategray: #2f4f4f;
 
 /************** Refactor Start Line ******************/
 
-h1, p{
+h1,h2,h3,h4,h5,h6, p{
   margin: 0;
 }
 
@@ -256,7 +247,28 @@ h1, p{
   flex-direction: column;
 }
 
-/************** Refactor Start Line ******************/
+/************** Banner CSS ******************/
+.banner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: url('banner-bg.png') no-repeat;
+  background-size: cover;
+}
+
+.banner > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.banner img{
+  width: 100%;
+}
+
+/************** Category List CSS ******************/
 .main-body{
   margin: 10px 5px;
   padding: 0;
@@ -321,6 +333,30 @@ h1, p{
   background-color: red;
   border-radius: 25px;
   padding: 2px;
+}
+
+/************** All Item List CSS ******************/
+.item-list{
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #dadada;
+}
+
+.item-list-thumbnail{
+  display: flex;
+  width: 40%;
+}
+.item-list-thumbnail img{
+  width: 100%;
+}
+
+.item-list-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: baseline;
+  padding-left: 10px;
+  width: 60%;
 }
 
 @media (min-width: 520px) and (max-width: 689px){

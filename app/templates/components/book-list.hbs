@@ -1,23 +1,21 @@
-      <hr>
-      <div class="containger-fluid">
+      <div class="item-list">
         
-        <div class="row books">
-          <div class="col-4">
-            {{#if book.thumbnail}}
-              <img src={{book.thumbnail}} alt="">
-            {{else}}
-              <img src="https://s3.us-east-2.amazonaws.com/txt-covers/uploads/cover/NoImage/nopicture.gif" alt="">
-            {{/if}}
-          </div>
-          <div class="col-8">
-            <h6>{{book.title}}</h6>
-            <p>by {{book.author}}</p>
-            <p><strong>${{book.price}}</strong></p>
-            <p>Condition: {{book.condition}}</p>
-            {{#link-to 'books.book.show' book}}View Details{{/link-to}} 
-            |
-            <button {{action 'addItem' book.id}}>Add to Cart</button>
-          </div>
+        <div class="item-list-thumbnail">
+          {{#if book.thumbnail}}
+            <img src={{book.thumbnail}} alt="">
+          {{else}}
+            <img src="https://s3.us-east-2.amazonaws.com/txt-covers/uploads/cover/NoImage/nopicture.gif" alt="">
+          {{/if}}
         </div>
-      </div> 
+
+        <div class="item-list-info">
+          <h6>{{book.title}}</h6>
+          <p>by {{book.author}}</p>
+          <strong>${{book.price}}</strong>
+          <p>Condition: {{book.condition}}</p>
+          {{#link-to 'books.book.show' book}}View Details{{/link-to}}
+          <button {{action 'addItem' book.id}}>Add to Cart</button>
+        </div>
+
+      </div>
 {{yield}}
