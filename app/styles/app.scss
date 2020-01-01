@@ -359,13 +359,54 @@ h1,h2,h3,h4,h5,h6, p{
   width: 60%;
 }
 
+/************** Profile ******************/
+.profile{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1rem;
+}
+
+.profile-item{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-item > h6{
+  background-color: #a1a1a1;
+  color: #F7F7F7;
+  padding: 10px 30px 10px 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.profile ul{
+ margin: 0px;
+ padding: 0px;
+}
+
+.profile ul li{
+  list-style: none;
+  padding: 10px;
+  background-color: white;
+  border-bottom: 0.5px solid #000000;
+}
+
+
 @media (min-width: 520px) and (max-width: 689px){
   .main-body-content-item{
     flex: 0 0 33.33%;
   }
 }
+
 @media (min-width: 690px){
   .main-body-content-item{
     flex: 0 0 auto;
+  }
+
+  .profile-item{
+    flex: 0 0 33.33%;
   }
 }

@@ -1,37 +1,29 @@
 
-<div class="alert alert-secondary">
-    Hi {{model.fname}}
-</div>
-
-
-
-<div class="container-fluid">
-    <h5>Your Account</h5>
-    
-    <section class="alert alert-info">
+<div class="profile">
+    <section class="profile-item">
         <h6>Manage your Orders</h6>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Your Orders</li>
-            <li class="list-group-item">Subscribe & Save</li>
-            <li class="list-group-item">Service Request</li>
+        <ul>
+            <li>Your Orders</li>
+            <li>Subscribe & Save</li>
+            <li>Service Request</li>
         </ul>
     </section>
 
-    <section class="alert alert-info">
+    <section class="profile-item">
         <h6>Manage your listings </h6>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"> {{#link-to 'users.catalog'}} Your Catalog {{/link-to}}</li>
-            <li class="list-group-item">{{#link-to 'books.new'}} Add to your Catolog {{/link-to}}</li>
-            <li class="list-group-item">Payment Methods</li>
+        <ul>
+            <li> {{#link-to 'users.catalog'}} Your Catalog {{/link-to}}</li>
+            <li>{{#link-to 'books.new'}} Add to your Catolog {{/link-to}}</li>
+            <li>Payment Methods</li>
         </ul>
     </section>
 
-    <section class="alert alert-info">
+    <section class="profile-item">
         <h6>Account Settings</h6>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Login & Security</li>
-            <li class="list-group-item">Notifications</li>
-            <li class="list-group-item">Payment Methods</li>
+        <ul>
+            <li>Login & Security</li>
+            <li>Notifications</li>
+            <li>Payment Methods</li>
         </ul>
     </section>
 </div>
