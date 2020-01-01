@@ -1,5 +1,6 @@
 @import "ember-bootstrap/bootstrap";
-@import "./nav";
+@import "./nav.scss";
+@import "./books.scss";
 
 html{
   box-sizing: border-box;
@@ -333,30 +334,6 @@ h1,h2,h3,h4,h5,h6, p{
   background-color: red;
   border-radius: 25px;
   padding: 2px;
-}
-
-/************** All Item List CSS ******************/
-.item-list{
-  display: flex;
-  padding: 10px;
-  border-bottom: 1px solid #dadada;
-}
-
-.item-list-thumbnail{
-  display: flex;
-  width: 40%;
-}
-.item-list-thumbnail img{
-  width: 100%;
-}
-
-.item-list-info{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: baseline;
-  padding-left: 10px;
-  width: 60%;
 }
 
 /************** Profile ******************/

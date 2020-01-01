@@ -1,4 +1,4 @@
-<div class="container-fluid">
+{{!-- <div class="container-fluid">
 
 <h4>{{model.title}}</h4>
 <h6>{{model.author}}</h6>
@@ -29,6 +29,39 @@
       <p>Conidition: {{model.condition}}</p>
     </div>
   </div>
+  {{#if isOwner}}
+    {{#link-to 'books.book.edit' model}}Edit{{/link-to}}
+  {{/if}}
+</div> --}}
+
+<div class="book-view">
+  
+  <div class="book-view-thumb">
+    <img src={{model.thumbnail}} alt="">
+  </div>
+
+  <div class="book-view-info">
+    <div class="book-view-info-item">
+      <h4 class="book-title">{{model.title}}</h4>
+      <p>{{model.author}}</p>
+      <p>{{model.isbn}}</p>
+      <p>Cateogry -- {{model.category}}</p>
+      <p>Conidition -- {{model.condition}}</p>
+    </div>
+    
+    <div class="book-view-info-item">
+      <span>${{model.price}}</span>
+    </div>
+  </div>
+    
+  <div class="book-view-description">
+    <p>{{model.description}}</p>
+  </div>
+
+  <div class="add-to-cart">
+     <button {{action 'addItem' book.id}}>Add to Cart</button>
+  </div>
+
   {{#if isOwner}}
     {{#link-to 'books.book.edit' model}}Edit{{/link-to}}
   {{/if}}
