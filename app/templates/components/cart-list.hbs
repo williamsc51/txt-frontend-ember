@@ -1,27 +1,27 @@
-<hr>
-    <div class="check-out">
-      <div class="row">
-        <div class="col-4">
-          <img class="index-img" src={{book.thumbnail}} />
-        </div>
-        <div class="col-8">
-          <h5>{{book.title}}</h5>
-          <p>${{book.price}}</p>
-        </div>
+<div class="cart-item">
+  <div class="cart-item-img">
+    <img src={{book.thumbnail}} />
+  </div>
+
+  <div class="cart-item-detail">
+    <div class="cart-item-info">
+      <div class="cart-item-info-left">
+        <h5>{{book.title}}</h5>
+        <p>{{book.author}}</p>
       </div>
-      <div class="row">
-        <div class="col">
-          <select name="" id="" class="btn btn-default dropdown-toggle">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        
-          <button class="btn btn-danger" {{action 'removeItem' book.id}}>Remove</button>
-        </div>
+      <div class="cart-item-info-right">
+       {{fa-icon "ellipsis-v"}}
       </div>
     </div>
-
-{{yield}}
+    <div class="cart-item-info">
+      <div class="cart-item-info-left">
+        <span>{{fa-icon "minus-circle"}}</span> 
+        <span>1</span> 
+        <span>{{fa-icon "plus-circle"}}</span>
+      </div>
+      <div class="cart-item-info-right">
+        <p>${{book.price}}</p>
+      </div>
+    </div>
+  </div>
+</div>
