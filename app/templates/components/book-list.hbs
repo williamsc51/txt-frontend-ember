@@ -14,7 +14,7 @@
           <strong>${{book.price}}</strong>
           <p>Condition: {{book.condition}}</p>
           {{#link-to 'books.book.show' book}}View Details{{/link-to}}
-          <div class="add-to-cart">
+          <div class="bluebtn">
             <button {{action 'addItem' book.id}}>Add to Cart</button>
           </div>
         </div>

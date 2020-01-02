@@ -1,9 +1,9 @@
 /************** Add To CArt ******************/
-.add-to-cart{
+.bluebtn{
   margin: 10px;
 }
 
-.add-to-cart > button{
+.bluebtn > button{
   color: #ffffff;
   text-transform: capitalize;
   text-align: center;
@@ -50,7 +50,7 @@
 }
 .book-view-thumb > img{
   width: 100%;
-  height: 50%;
+  height: 500px;
 }
 
 .book-view-info{
@@ -75,4 +75,13 @@
 .book-view-description > p{
   display: flex;
   align-content: stretch;
+}
+
+.book-view-edit{
+  padding: 10px 10px 10px 10px;
+}
+
+.book-view-edit > a {
+  color: #686868;
+  font-weight: bold;
 }
