@@ -305,8 +305,8 @@ h1,h2,h3,h4,h5,h6, p{
 .main-body-content-item > div {
   border-bottom: 1px solid #000000;
   border-radius: 20px;
-  width: 150px;
-  height: 150px;
+  width: 162px;
+  height: 184px;
   position: relative;
 }
 
@@ -406,12 +406,44 @@ h1,h2,h3,h4,h5,h6, p{
   justify-content: space-between;
 }
 
+/************** Logout ******************/
 .logout{
   width: 100%;
   text-align: center;
   color: #ff0000;
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+/************** Rating and Review Component ******************/
+.review-divider{
+  margin: 0 auto;
+  width: 30%;
+  border-radius: 30px;
+  border: 5px solid #cccccc;
+  // padding-bottom: 5px;
+}
+
+.review{
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.review-header{
+  text-align: center;
+}
+
+.review-content-form > textarea{
+  background-color: #404040;
+  color: #ffffff;
+  width: 100%;
+}
+
+.review-star{
+  color: #1be900;
 }
 
 @media (min-width: 520px) and (max-width: 689px){
