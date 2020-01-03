@@ -3,12 +3,6 @@ import { inject as service} from '@ember/service';
 
 export default Controller.extend({
   
-  session: service(),
   cart: service(),
 
-  actions: {
-    logOut(){
-      this.get('session').invalidate();
-    }
-  }
 });

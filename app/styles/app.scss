@@ -406,6 +406,14 @@ h1,h2,h3,h4,h5,h6, p{
   justify-content: space-between;
 }
 
+.logout{
+  width: 100%;
+  text-align: center;
+  color: #ff0000;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 @media (min-width: 520px) and (max-width: 689px){
   .main-body-content-item{
     flex: 0 0 33.33%;
