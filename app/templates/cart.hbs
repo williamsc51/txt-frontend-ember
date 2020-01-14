@@ -5,7 +5,7 @@
   </div>
 
   {{#if session.isAuthenticated}}
-    {{#each model.books as |book|}}
+    {{#each model as |book|}}
       {{cart-list book=book}}
     {{/each}}
   {{else}}
