@@ -6,7 +6,20 @@ export default Service.extend({
 
     store: service(),
     session: service(),
-    cartId: null,
+    user: service(),
+    cartID: null,
+
+    createCart(){
+      return this.store.createRecord('cart', {user_id: this.user.currentUser})
+    },
+
+    getCart(){
+      return this.store.queryRecord('cart', {user_id: this.user.currentUser})
+    },
+
+    setCartID(cid){
+      this.set('cartID', cid)
+    },
 
     emptyCart: computed('total', function(){
       if(this.total === 0){
@@ -18,20 +31,16 @@ export default Service.extend({
     }),
 
     async add(bookId){
-        let addBook = this.store.createRecord('books_cart', {book_id: bookId, cart_id: this.cartId})
+        let addBook = this.store.createRecord('books_cart', {book_id: bookId, cart_id: this.cartID})
         await addBook.save()
         this.getCart()
     },
 
-    getCart(){
-      let current_user = this.session.data.authenticated.id
-      return this.store.queryRecord('cart', {user_id: current_user})
-    },
-
     remove(bookId){
-      this.store.query('books_cart', {filter: {book_id: bookId, cart_id: this.cartId}}, {backgroundReload: false}).then(function(book){
-        book.forEach(function(b){
-          b.destroyRecord();
+      this.store.query('books_cart', {filter: {book_id: bookId, cart_id: this.cartID}}, {backgroundReload: false}).then((book)=>{
+        book.forEach(async (b)=>{
+          await b.destroyRecord();
+          this.getCart()
         })
       })
     },

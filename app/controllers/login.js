@@ -1,9 +1,11 @@
 import Controller from '@ember/controller';
 import { inject as service } from '@ember/service';
+import { inject } from '@ember/controller';
 
 export default Controller.extend({
 
   session: service(),
+  appCont: inject('application'),
   email: '',
   password: '',
 
@@ -14,6 +16,8 @@ export default Controller.extend({
 
       await this.get('session').authenticate('authenticator:credentials', email.toLowerCase(), password);
 
+      this.appCont.refresher()
+      
       this.transitionToRoute(this.session.authenticate.attemptedTransition);
     }
   }
