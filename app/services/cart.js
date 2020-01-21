@@ -45,10 +45,6 @@ export default Service.extend({
       })
     },
 
-    clear(){
-      this.get('bookIds').clear()
-    },
-
     bookPrices: computed.mapBy('books', 'price'),
 
     total: computed.sum('bookPrices'),
