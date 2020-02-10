@@ -30,6 +30,7 @@ module.exports = function(environment) {
     },
 
     host: 'http://localhost:3000'
+    // host: 'http://10.0.2.2:3000' // needed for live reload on android emulator. corber start
   };
 
   if (environment === 'development') {
