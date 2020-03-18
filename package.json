@@ -70,7 +70,8 @@
     "node": "6.* || 8.* || >= 10.*"
   },
   "dependencies": {
-    "ember-bootstrap": "^3.0.0-rc.6"
+    "ember-bootstrap": "^3.0.0-rc.6",
+    "torii": "^0.10.1"
   },
   "ember-addon": {
     "paths": [
