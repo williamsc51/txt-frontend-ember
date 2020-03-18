@@ -12,9 +12,9 @@ export default Controller.extend({
   actions: {
     async signIn(event){
       event.preventDefault();
-      let { email, password } = this;
+      // let { email, password } = this;
 
-      await this.get('session').authenticate('authenticator:credentials', email.toLowerCase(), password);
+      await this.get('session').authenticate('authenticator:txt-rails');
 
       this.appCont.refresher()
       

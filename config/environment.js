@@ -29,6 +29,15 @@ module.exports = function(environment) {
       // when it is created
     },
 
+    torii: {
+      providers: {
+        'txt-rails': {
+          remoteServiceName: 'iframe',
+          apiKey: 'KLCSjCbPNEpKwqADyL1kS4Ue0KaCXJ3s_NLxfjxe9j0',
+        }
+      }
+    },
+
     host: 'http://localhost:3000'
     // host: 'http://10.0.2.2:3000' // needed for live reload on android emulator. corber start
   };
