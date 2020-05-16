@@ -2,6 +2,8 @@
 @import "./nav.scss";
 @import "./books.scss";
 
+$link-color: #FFA500;
+
 html{
   box-sizing: border-box;
 }
@@ -272,6 +274,7 @@ h1,h2,h3,h4,h5,h6, p{
   padding: 0;
   display: flex;
   flex-direction: column;
+  border-bottom: thin #ffffff solid;
 }
 
 .main-body-header{
@@ -280,6 +283,10 @@ h1,h2,h3,h4,h5,h6, p{
   display: flex;
   justify-content: space-between;
   color: #F7F7F7;
+}
+
+.main-body-header > a{
+  color: $link-color;
 }
 
 .main-body-content{
@@ -307,7 +314,6 @@ h1,h2,h3,h4,h5,h6, p{
 .main-body-content-item img {
   width: 100%;
   height: 100%;
-  border-radius: inherit;
 }
 
 .main-body-content-item > article {
@@ -370,9 +376,10 @@ h1,h2,h3,h4,h5,h6, p{
 }
 
 .cart-item{
+  color: #ffffff;
   margin: 5px 5px 25px 5px;
   border-radius: 15px;
-  box-shadow: 3px 3px 2px 1px rgba(0, 0, 255, .2);
+  box-shadow: 3px 3px 2px 1px rgba(255, 255, 255, 0.2);
   display: flex;
   justify-content: flex-start;
 }

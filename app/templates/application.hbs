@@ -11,7 +11,11 @@
     <ul>
       <li>Home</li>
       <li>Shop</li>
-      <li>Cart <span style="font-weight: bold">({{model.books_count}})</span></li>
+      <li>Cart 
+        {{#if session.isAuthenticated}}
+          <span style="font-weight: bold">({{model.books_count}})</span>
+        {{/if}}
+      </li>
       <li>Profile</li>
     </ul>
   </div>

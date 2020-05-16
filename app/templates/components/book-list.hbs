@@ -1,23 +1,22 @@
-      <div class="item-list">
-        
-        <div class="item-list-thumbnail">
-          {{#if book.thumbnail}}
-            <img src={{book.thumbnail}} alt="">
-          {{else}}
-            <img src="https://s3.us-east-2.amazonaws.com/txt-covers/uploads/cover/NoImage/nopicture.gif" alt="">
-          {{/if}}
-        </div>
+<div class="item-list">
+  
+  <div class="item-list-thumbnail">
+    {{#link-to 'books.book.show' book}}
+      {{#if book.thumbnail}}
+        <img src={{book.thumbnail}} alt="">
+      {{else}}
+        <img src="https://s3.us-east-2.amazonaws.com/txt-covers/uploads/cover/NoImage/nopicture.gif" alt="">
+      {{/if}}
+    {{/link-to}}
+  </div>
 
-        <div class="item-list-info">
-          <h6>{{book.title}}</h6>
-          <p>by {{book.author}}</p>
-          <strong>${{book.price}}</strong>
-          <p>Condition: {{book.condition}}</p>
-          {{#link-to 'books.book.show' book}}View Details{{/link-to}}
-          <div class="bluebtn">
-            <button {{action 'addItem' book.id}}>Add to Cart</button>
-          </div>
-        </div>
+  <div class="item-list-info">
+    <h6>{{book.title}}</h6>
+    <p>by {{book.author}}</p>
+    <strong>${{book.price}}</strong>
+    {{#link-to 'books.book.show' book}}View Details{{/link-to}}
+    <span class="cart-add"> {{fa-icon "cart-plus" size="2"}}</span>
+  </div>
 
-      </div>
+</div>
 {{yield}}
