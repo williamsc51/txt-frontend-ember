@@ -45,16 +45,11 @@ export default Service.extend({
       })
     },
 
-    bookPrices: computed.mapBy('books', 'price'),
+    getTotal(){
+       return this.store.peekAll('books_cart')
+    },
 
-    total: computed.sum('bookPrices'),
-
-    roundedTotal: computed('total', function(){
-      return this.get('total').toFixed(2)
+    total: computed('getTotal',function(){
+      return this.getTotal()
     }),
-
-    
-    centsTotal: computed('total', function(){
-      return this.get('total') * 100;
-    })
 });

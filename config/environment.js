@@ -23,22 +23,24 @@ module.exports = function(environment) {
         Date: false
       }
     },
+    
+    torii: {
+      disableRedirectInitializer: true,
+      providers: {
+        txtrails: {
+          // remoteServiceName: 'iframe',
+          apiKey: '6hJAuMD_y8DPvDb-snVo2XXzL1h7iz-dHuOYqRywN9I'
+        }
+      }
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
 
-    torii: {
-      providers: {
-        'txt-rails': {
-          remoteServiceName: 'iframe',
-          apiKey: 'KLCSjCbPNEpKwqADyL1kS4Ue0KaCXJ3s_NLxfjxe9j0',
-        }
-      }
-    },
-
-    host: 'http://localhost:3000'
+    // host: 'http://localhost:3000'
+    host: 'http://10.0.0.186:3000'
     // host: 'http://10.0.2.2:3000' // needed for live reload on android emulator. corber start
   };
 

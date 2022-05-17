@@ -5,6 +5,6 @@ export default ToriiAuthenticator.extend({
   torii: service(),
 
   authenticate(options) {
-    return this._super('txt-rails', options);
+    return this._super('txtrails', options);
   }
 });
