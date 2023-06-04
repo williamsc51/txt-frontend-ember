@@ -9,7 +9,7 @@ export default DS.Model.extend({
   price: DS.attr('number'),
   description: DS.attr('string'),
   condition: DS.attr('string'),
-  thumbnail: DS.attr('string'),
+  image: DS.attr('string'),
   category: DS.attr('string'),
   created_at: DS.attr('date')
 });
