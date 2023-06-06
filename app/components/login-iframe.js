@@ -15,7 +15,8 @@ export default Component.extend({
 
   updateIframeHeight() {
     if (this.iframeDocument && this.iframeDocument.readyState === 'complete') {
-      this.iframe.style.height = `${this.iframeDocument.body.scrollHeight}px`;
+      this.iframe.style.height = "300px";
+      this.iframe.style.width = "100%";
     }
   },
 

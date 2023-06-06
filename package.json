@@ -13,7 +13,7 @@
   "scripts": {
     "build": "ember build",
     "lint:js": "eslint .",
-    "start": "ember serve --proxy=http://10.0.0.186:3000/",
+    "start": "ember serve --proxy=http://localhost:3000/",
     "test": "ember test"
   },
   "devDependencies": {

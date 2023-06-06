@@ -28,8 +28,9 @@ module.exports = function(environment) {
       disableRedirectInitializer: true,
       providers: {
         txtrails: {
-          // remoteServiceName: 'iframe',
-          apiKey: '6hJAuMD_y8DPvDb-snVo2XXzL1h7iz-dHuOYqRywN9I'
+          remoteServiceName: 'iframe',
+          apiKey: 'QZkeR03mtgEdolCfl87ywf2cYgm-gmrcugprkr8aKco',
+          redirectUri: 'http://localhost:4200/'
         }
       }
     },
@@ -39,8 +40,8 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    // host: 'http://localhost:3000'
-    host: 'http://10.0.0.186:3000'
+    host: 'http://localhost:3000'
+    // host: 'http://10.0.0.186:3000'
     // host: 'http://10.0.2.2:3000' // needed for live reload on android emulator. corber start
   };
 
